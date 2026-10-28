@@ -6,3 +6,5 @@
 ## THÔNG TIN DEPLOYMENT
 1. **Docker Hub Backend:** thuanpham709/backend:latest
 2. **Docker Hub Frontend:** thuanpham709/frontend:latest
+3. **Render Frontend URL:** https://web-235148.onrender.com
+4. **Render Backend URL:** https://api-235148.onrender.com

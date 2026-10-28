@@ -6,7 +6,11 @@ require('dotenv').config();
 const Book = require('./models/Book');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*', // Cho phép mọi Frontend (hoặc điền link Render Frontend của bạn vào đây)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Kết nối MongoDB Atlas
@@ -98,6 +102,6 @@ app.delete('/api/books/:id', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server Backend đang chạy tại port ${PORT}`);
 });
